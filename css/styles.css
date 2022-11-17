@@ -181,6 +181,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: #757575;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-link.current,
@@ -237,9 +238,9 @@ img {
   line-height: 1.88;
   letter-spacing: 0.06em;
   color: var(--btn-text-color);
-
-  background: var(--btn-main-color);
+  background-color: var(--btn-main-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -457,17 +458,15 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--icon-clients-logo-main-color);
-}
-
-.team-soc-icon {
-  fill: currentColor;
+  fill: var(--icon-clients-logo-main-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover,
 .team-soc-link:focus {
   background-color: var(--icon-soc-bg-accent-color);
-  color: var(--icon-soc-accent-color);
+  fill: var(--icon-soc-accent-color);
 }
 
 /* (first option for total hover/focus on the icon and their bg)
@@ -523,6 +522,7 @@ img {
   color: var(--icon-clients-logo-main-color);
   border: 1px solid currentColor;
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-logo-icon {
@@ -589,6 +589,7 @@ img {
   font-weight: 400;
   line-height: 1.71;
   color: var(--footer-tel-mail-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts-mail:hover,
@@ -626,17 +627,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--icon-soc-accent-color);
-}
-
-.footer-soc-icon {
-  fill: currentColor;
+  fill: var(--icon-soc-accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: var(--icon-soc-bg-accent-color);
-  color: var(--icon-soc-accent-color);
 }
 
 /*-----------------PORTFOLIO-BTN------------------*/
