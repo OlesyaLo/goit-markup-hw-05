@@ -282,9 +282,9 @@ img {
   visibility: visible;
 }
 
-/*---------------ADVANTAGES-----------------*/
+/*---------------features-----------------*/
 
-.advantages-section {
+.features-section {
   width: 100%;
 }
 
@@ -301,20 +301,20 @@ img {
   margin: -1px;
 }
 
-.advantages-list {
+.features-list {
   display: flex;
 }
 
-.advantages-item {
+.features-item {
   margin-right: 30px;
   width: 270px;
 }
 
-.advantages-item:last-child {
+.features-item:last-child {
   margin-right: 0;
 }
 
-.advantages-item-title {
+.features-item-title {
   margin-bottom: 10px;
   font-weight: 700;
   line-height: 1.14;
@@ -323,12 +323,12 @@ img {
   color: var(--title-second-color);
 }
 
-.advantages-item-text {
+.features-item-text {
   line-height: 1.71;
   color: var(--text-second-color);
 }
 
-.advantages-item-box {
+.features-item-box {
   height: 120px;
   display: flex;
   justify-content: center;
@@ -338,7 +338,7 @@ img {
   background-color: var(--background-third-color);
 }
 
-.advantages-item-icon {
+.features-item-icon {
   fill: currentColor;
 }
 
@@ -682,14 +682,16 @@ img {
   letter-spacing: 0.03em;
 
   color: var(--btn-second-text-color);
-  background: var(--btn-second-color);
+  background-color: var(--btn-second-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn.active,
 .portfolio-btn:hover,
 .portfolio-btn:focus,
 .portfolio-btn:active {
-  background: var(--btn-main-color);
+  background-color: var(--btn-main-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   color: var(--btn-text-color);
@@ -708,9 +710,31 @@ img {
   width: 370px;
 }
 
+.portfolio-projects-item:hover .portfolio-projects-overlay-text {
+  transform: translateY(0);
+}
+
+.portfolio-projects-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-projects-overlay-text {
+  position: absolute;
+  top: 0;
+  padding: 63px 24px;
+  color: var(--text-third-color);
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-projects-link {
   display: block;
-  border: 1px solid #eeeeee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-projects-link:hover,
@@ -721,10 +745,8 @@ img {
 
 .portfolio-projects-text-wrap {
   padding: 20px 24px;
+  border: 1px solid #eeeeee;
   border-top: none;
-}
-
-.portfolio-projects-img {
 }
 
 .portfolio-projects-title {
