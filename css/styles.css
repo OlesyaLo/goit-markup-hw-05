@@ -750,7 +750,8 @@ img {
   width: 370px;
 }
 
-.portfolio-projects-item:hover .portfolio-projects-overlay-text {
+.portfolio-projects-link:hover .portfolio-projects-overlay-text,
+.portfolio-projects-link:focus .portfolio-projects-overlay-text {
   transform: translateY(0);
 }
 
