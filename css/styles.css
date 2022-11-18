@@ -249,40 +249,7 @@ img {
   background-color: var(--btn-accent-color);
 }
 
-/*---------------MODAL-----------------*/
-
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero-modal {
-  box-sizing: border-box;
-  margin: auto;
-  width: 528px;
-  height: 581px;
-  background-color: var(--background-main-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.backdrop {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  visibility: visible;
-}
-
-/*---------------features-----------------*/
+/*---------------FEATURES-----------------*/
 
 .features-section {
   width: 100%;
@@ -366,10 +333,28 @@ img {
 
 .services-item {
   margin-right: 30px;
+  position: relative;
 }
 
 .services-item:last-child {
   margin-right: 0;
+}
+
+.services-overlay-text {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--title-main-color);
+  background: rgba(47, 48, 58, 0.8);
 }
 
 .services-img-1 {
@@ -582,6 +567,7 @@ img {
   font-weight: 400;
   line-height: 1.71;
   color: var(--text-third-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts-mail,
@@ -592,6 +578,8 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-contacts-map:hover,
+.footer-contacts-map:focus,
 .footer-contacts-mail:hover,
 .footer-contacts-mail:focus,
 .footer-contacts-tel:hover,
@@ -634,6 +622,58 @@ img {
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: var(--icon-soc-bg-accent-color);
+}
+
+/*---------------MODAL-----------------*/
+
+.backdrop {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hero-modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--background-main-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .hero-modal {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.hero-modal-close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /*-----------------PORTFOLIO-BTN------------------*/
